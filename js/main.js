@@ -1,2 +1,2 @@
-import { login } from "./loginView.js";
+import { login } from "./view/loginView.js";
 login();

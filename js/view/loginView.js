@@ -1,4 +1,4 @@
-import { start } from "./loginController.js";
+import { start } from "../controller/loginController.js";
 export const login = () =>{
     const container = document.querySelector("#container");
     const formContainer = document.createElement("div")
