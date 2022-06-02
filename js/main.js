@@ -1,1 +1,2 @@
-console.log("Cargado")
+import { login } from "./loginView.js";
+login();
