@@ -1,4 +1,4 @@
-
+import { validateAnswer } from "../controller/gameController.js";
 export const newGame = () => {
     
     const container = document.querySelector("#container");
@@ -25,7 +25,7 @@ export const newGame = () => {
     for(let i = 1; i <=4; i++){
         const btnAnswer = document.createElement("button");
         btnAnswer.classList.add("btn_answer");
-        //btnAnswer.addEventListener("click")
+        btnAnswer.addEventListener("click",() =>{validateAnswer(btnAnswer.textContent)},false)
         btnAnswer.id = "btn" + i;
         answerContainer.append(btnAnswer)
     }
