@@ -1,0 +1,147 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+#container{
+    background-color: cadetblue;
+    width: 100vw;
+    height: 100vh;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form_container{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    background-color:#fbe1c8;
+    border-radius: 16px;
+    align-items: center;
+    height: 400px;
+    
+}
+
+.form_container h1{
+    color: #22ae9e;
+    font-weight: 300;
+    font-size: 28px;
+    margin-top: 67px;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.login_form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0px 24px;
+}
+
+.login_form label{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    align-self: center;
+    margin-top: 24px;
+}
+
+.login_form button{
+    height: 36px;
+    width: 100%;
+    border:none;
+    border-radius: 8px;
+    color:black;
+    font-family: urbane,sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 200;
+    margin-top: 24px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+#name_input{
+    margin-bottom: 12px;
+    padding: 4px 12px;
+    height: 36px;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #bebdbb;
+}
+
+.game_container, .ranking_container{
+    grid-row: 2;
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    background-color:hsl(29, 86%, 88%);
+    border-radius: 16px;
+    align-items: center;
+    height: fit-content;
+    padding: 5px;
+}
+
+.name_txt, .score_txt{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    align-self:initial;
+    margin-top: 4px;
+}
+
+.question{
+    text-decoration: none;
+    text-align: center;
+    font-style: italic;
+    color: black;
+    font-size: 22px;
+    align-self:initial;
+    margin-top: 18px;
+}
+
+.btn_answer{
+    height: 36px;
+    width: 100%;
+    border:2px solid black;
+    border-radius: 8px;
+    background-color: lightgrey;
+    color:black;
+    font-family: urbane,sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 200;
+    margin-top: 24px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.quit_btn{
+    height: 50px;
+    width: 60%;
+    border:1px solid brown;
+    background-color: red;
+    border-radius: 8px;
+    color:white;
+    font-family: urbane,sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 200;
+    margin-top: 24px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.table{
+    width: 75%;
+    border: 1px solid black;
+}
+
+.table td{
+
+    border: 1px solid black;
+}

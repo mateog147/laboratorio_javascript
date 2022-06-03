@@ -2,6 +2,7 @@ import { start } from "../controller/loginController.js";
 export const login = () =>{
     const container = document.querySelector("#container");
     const formContainer = document.createElement("div")
+    formContainer.classList.add("form_container")
     container.append(formContainer)
 
     const title = document.createElement("h1");

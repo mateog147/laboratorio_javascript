@@ -7,6 +7,9 @@ export const showRanking = () => {
     rankingContainer.classList.add("ranking_container");
     container.appendChild(rankingContainer);
 
+    const title = document.createElement("h1");
+    title.textContent = "Ranking";
+
     //Creo la tabla
     const tableData = document.createElement("table");
     tableData.classList.add("table");
@@ -21,5 +24,5 @@ export const showRanking = () => {
 
     tableHeader.append(nameCol,scoreCol)
     tableData.append(tableHeader)
-    rankingContainer.append(tableData)
+    rankingContainer.append(title,tableData)
 }

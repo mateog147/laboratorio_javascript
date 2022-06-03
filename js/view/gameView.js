@@ -32,6 +32,7 @@ export const newGame = () => {
 
     const quitBtn = document.createElement("button");
     quitBtn.innerHTML = "Abandonar la partida"
+    quitBtn.classList.add("quit_btn")
     quitBtn.addEventListener("click",quitGame,true)
 
     gameContainer.append(question, answerContainer, quitBtn)
