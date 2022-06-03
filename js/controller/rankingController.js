@@ -1,4 +1,10 @@
 import { showRanking } from "../view/rankingView.js"
+/**
+ * Funcion para cargar el ranking de jugadores
+* @author Mateo Gutierrez <mateog147@hotmail.com>
+ * @version 1.0.0 2022/05/30
+ * @since 1.0.0
+ */
 export const ranking = () =>{
     showRanking()
 

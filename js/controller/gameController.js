@@ -7,6 +7,12 @@ let currentQuestion = {};
 let level = 1;
 let score = 0;
 let player = {}
+/**
+ * Fcontrolador principal del juego
+* @author Mateo Gutierrez <mateog147@hotmail.com>
+ * @version 1.0.0 2022/05/30
+ * @since 1.0.0
+ */
 export const play = (name) =>{
     player = newUser(name);
     newGame();
@@ -21,6 +27,14 @@ export const play = (name) =>{
 
 }
 
+/**
+ * funcion para validar la repuesta seleccionada
+ * @param {*} answer respuesta a comparar
+ * 
+ * @author Mateo Gutierrez <mateog147@hotmail.com>
+ * @version 1.0.0 2022/05/30
+ * @since 1.0.0
+ */
 export const validateAnswer = (answer) =>{
     let question = JSON.parse(sessionStorage.getItem("currentQuestion"));
     if(answer == question.correcta){
@@ -39,11 +53,23 @@ export const validateAnswer = (answer) =>{
     }
 }
 
+/**
+ * Funcion para abandonar el juego
+* @author Mateo Gutierrez <mateog147@hotmail.com>
+ * @version 1.0.0 2022/05/30
+ * @since 1.0.0
+ */
 export const quitGame = () =>{
     alert("Juego terminado")
     win();
 }
 
+/**
+ * Funcion para setear una nueva pregunta el pantalla
+* @author Mateo Gutierrez <mateog147@hotmail.com>
+ * @version 1.0.0 2022/05/30
+ * @since 1.0.0
+ */
 const setNewQuestion = () =>{
     const scoreTxt = document.querySelector(".score_txt");
     scoreTxt.textContent = "Puntaje: " + score;console.log(level);
@@ -68,6 +94,12 @@ const setNewQuestion = () =>{
     sessionStorage.setItem("currentQuestion",JSON.stringify(currentQuestion));
 }
 
+/**
+ * Funcion para terminar el juego como ganador
+* @author Mateo Gutierrez <mateog147@hotmail.com>
+ * @version 1.0.0 2022/05/30
+ * @since 1.0.0
+ */
 const win = ()=>{
     let top = [];
     player.setScore(score)
@@ -82,6 +114,12 @@ const win = ()=>{
     ranking()
 }
 
+/**
+ * Funcion para  terminar el juego como perdedor
+* @author Mateo Gutierrez <mateog147@hotmail.com>
+ * @version 1.0.0 2022/06/02
+ * @since 1.0.0
+ */
 const gameOver = ()=>{
     let top = [];
     if(localStorage.getItem("topPlayer")){

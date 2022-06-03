@@ -1,6 +1,17 @@
 import { start } from "../controller/loginController.js";
+
+/**
+ * Funcion para capturar el usuario y comenzar el juego
+* @author Mateo Gutierrez <mateog147@hotmail.com>
+ * @version 1.0.0 2022/06/02
+ * @since 1.0.0
+ */
 export const login = () =>{
+
+    /*Capturo los elementos del dom*/
     const container = document.querySelector("#container");
+
+    /*Creo el contenido */
     const formContainer = document.createElement("div")
     formContainer.classList.add("form_container")
     container.append(formContainer)

@@ -1,3 +1,9 @@
+/**
+ * Funcion para cargar la vista del ranking
+* @author Mateo Gutierrez <mateog147@hotmail.com>
+ * @version 1.0.0 2022/06/02
+ * @since 1.0.0
+ */
 export const showRanking = () => {
     
     const container = document.querySelector("#container");

@@ -1,3 +1,8 @@
+/**
+ * Clase usuario.
+ * Atributos nombre y score
+ * Metodo set para el score
+ */
 export class User{
     constructor(name){
         this.name = name
