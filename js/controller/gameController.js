@@ -1,12 +1,14 @@
 import { newGame } from "../view/gameView.js";
 import { newUser } from "../model/user.js";
 import {getQuestion} from "../model/question.js"
+import {ranking} from "./rankingController.js"
 
 let currentQuestion = {};
-export let level = 1;
-export let score = 0;
+let level = 1;
+let score = 0;
+let player = {}
 export const play = (name) =>{
-    const player = newUser(name);
+    player = newUser(name);
     newGame();
     const userTxt = document.querySelector(".name_txt");
     userTxt.textContent = "Usuario: " + player.name;
@@ -20,17 +22,26 @@ export const play = (name) =>{
 }
 
 export const validateAnswer = (answer) =>{
-    console.log(answer);
     let question = JSON.parse(sessionStorage.getItem("currentQuestion"));
-    console.log(question);
     if(answer == question.correcta){
-       score += level * 100;
+        score += level * 100;
         level++;
         alert("Correcto")
-        setNewQuestion();
+        if(level > 5){
+            win();
+        }else{
+            setNewQuestion();
+        }
+        
     }else{
-        alert("Incorrecto")
+        alert("Incorrecto - Juego terminado")
+        gameOver();
     }
+}
+
+export const quitGame = () =>{
+    alert("Juego terminado")
+    win();
 }
 
 const setNewQuestion = () =>{
@@ -55,4 +66,31 @@ const setNewQuestion = () =>{
     btn4.textContent = currentQuestion.respuesta4;
 
     sessionStorage.setItem("currentQuestion",JSON.stringify(currentQuestion));
+}
+
+const win = ()=>{
+    let top = [];
+    player.setScore(score)
+    if(localStorage.getItem("topPlayer")){
+        top = JSON.parse(localStorage.getItem("topPlayer"));
+        top.push(player);
+        localStorage.setItem("topPlayer",JSON.stringify(top));
+    }else{
+        top.push(player);
+        localStorage.setItem("topPlayer",JSON.stringify(top));
+    }
+    ranking()
+}
+
+const gameOver = ()=>{
+    let top = [];
+    if(localStorage.getItem("topPlayer")){
+        top = JSON.parse(localStorage.getItem("topPlayer"));
+        top.push(player);
+        localStorage.setItem("topPlayer",JSON.stringify(top));
+    }else{
+        top.push(player);
+        localStorage.setItem("topPlayer",JSON.stringify(top));
+    }
+    ranking()
 }

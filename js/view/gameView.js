@@ -1,4 +1,4 @@
-import { validateAnswer } from "../controller/gameController.js";
+import { validateAnswer, quitGame } from "../controller/gameController.js";
 export const newGame = () => {
     
     const container = document.querySelector("#container");
@@ -32,7 +32,7 @@ export const newGame = () => {
 
     const quitBtn = document.createElement("button");
     quitBtn.innerHTML = "Abandonar la partida"
-    //quitAnswerBtnnAnswer.addEventListener("click")
+    quitBtn.addEventListener("click",quitGame,true)
 
     gameContainer.append(question, answerContainer, quitBtn)
 
